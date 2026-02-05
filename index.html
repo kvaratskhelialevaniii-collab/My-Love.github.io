@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<!-- Pink heart favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+<text y='0.9em' font-size='90'>💗</text>
+</svg>">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe0e6, #ffcad4, #fff0f5);
+}
+
+/* Proposal Card */
+.card {
+    position: relative;
+    background: rgba(255,255,255,0.95);
+    padding: 50px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+    z-index: 10;
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+h1 { color: #ff2f6d; margin-bottom: 15px; font-size: 2em; }
+p { color: #555; font-size: 18px; line-height: 1.6; margin: 10px 0; }
+h2 { color: #ff4d88; margin-top: 25px; font-size: 1.5em; }
+
+button {
+    margin-top: 30px;
+    padding: 16px 40px;
+    font-size: 22px;
+    border: none;
+    border-radius: 40px;
+    background: #ff2f6d;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover { background: #ff004c; transform: scale(1.05); }
+
+/* Floating Hearts and Sakura */
+.falling {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+}
+
+.heart {
+    background: #ff4d88;
+    transform: rotate(45deg);
+}
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4d88;
+    border-radius: 50%;
+}
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
+
+.sakura {
+    background: #ffb7c5;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Animation */
+@keyframes floatUp {
+    from { transform: translateY(110vh) rotate(0deg) scale(0.8); opacity: 0; }
+    20% { opacity: 0.9; }
+    to { transform: translateY(-15vh) rotate(360deg) scale(1); opacity: 0; }
+}
+
+/* Reveal reasons */
+.reason {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.reason.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Hey My Love 💗</h1>
+    <h2>All the reasons I love you 💕</h2>
+    <div id="reasons">
+        <p class="reason">1. You are so sweet and caring.</p>
+        <p class="reason">2. Your smile lights up my world.</p>
+        <p class="reason">3. Your voice is so adorable and cute.</p>
+        <p class="reason">4. Your kind heart inspires me.</p>
+        <p class="reason">5. Your eyes make me feel at home.</p>
+        <p class="reason">6. Your personality is fun and genuine.</p>
+        <p class="reason">7. Your courage amazes me every day.</p>
+        <p class="reason">8. Your little gestures mean the world.</p>
+        <p class="reason">9. You are beautiful inside and out.</p>
+        <p class="reason">10. Your voice soothes me and makes me happy.</p>
+        <p class="reason">11. You make me feel so special.</p>
+        <p class="reason">12. Just being near you makes life better.</p>
+        <p class="reason">13. You inspire me to be a better person.</p>
+        <p class="reason">14. Your quirky little habits make me smile.</p>
+        <p class="reason">15. Your heart is pure and full of love.</p>
+        <p class="reason">16. I never want to lose you.</p>
+        <p class="reason">17. You are my everything, forever.</p>
+        <p class="Proposal">Will you be my wife?</p>
+    </div>
+    <button onclick="alert('I love you and i never ever want to lose you u dont know how much u mean to me and how much light u bring into my life my precious darling ❤️')">Yes 💖</button>
+</div>
+
+<script>
+// 🌸 LOTS OF FLOATING HEARTS
+for (let i = 0; i < 100; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'falling heart';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (Math.random() * 6 + 5) + 's';
+    heart.style.width = heart.style.height = (Math.random() * 15 + 15) + 'px';
+    heart.style.opacity = Math.random() * 0.7 + 0.3;
+    document.body.appendChild(heart);
+}
+
+// 🌸 Sakura petals floating
+for (let i = 0; i < 40; i++) {
+    const sakura = document.createElement('div');
+    sakura.className = 'falling sakura';
+    sakura.style.left = Math.random() * 100 + 'vw';
+    sakura.style.width = sakura.style.height = (Math.random() * 15 + 10) + 'px';
+    sakura.style.animationDuration = (Math.random() * 8 + 6) + 's';
+    sakura.style.opacity = Math.random() * 0.8 + 0.2;
+    document.body.appendChild(sakura);
+}
+
+// Reveal reasons one by one
+const reasons = document.querySelectorAll('.reason');
+let delay = 0;
+reasons.forEach((r) => {
+    setTimeout(() => {
+        r.classList.add('show');
+    }, delay);
+    delay += 800; // 0.8 seconds between each reason
+});
+</script>
+
+</body>
+</html>
